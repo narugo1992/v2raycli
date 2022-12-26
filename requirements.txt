@@ -1,0 +1,4 @@
+requests>=2.18
+click>=7
+tabulate>=0.8.0
+inquirerpy>=0.3.0
