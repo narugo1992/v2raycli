@@ -1,6 +1,6 @@
 """
 Overview:
-    Meta information for gchar package.
+    Meta information for v2raycli package.
 """
 
 #: Title of this project (should be `v2raycli`).
