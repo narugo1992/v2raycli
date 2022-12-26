@@ -4,13 +4,17 @@ import click
 from InquirerPy import inquirer
 from tabulate import tabulate
 
-from .base import CONTEXT_SETTINGS, command_wrap
+from .base import CONTEXT_SETTINGS, command_wrap, ClickWarningException
 from .list import _get_sublist, V2RAY_SUBSCRIPTION_ENV
 from ..dispatch import put_config_to_tempfile
 from ..execute import load_v2ray_bin, get_v2ray_from_env
 from ..subscription import list_from_subscription
 
 V2RAY_EXEC_ENV = 'V2RAY_EXEC'
+
+
+class NoSiteFoundError(ClickWarningException):
+    exit_code = 0x11
 
 
 def _add_run_subcommand(cli: click.Group) -> click.Group:
@@ -40,6 +44,9 @@ def _add_run_subcommand(cli: click.Group) -> click.Group:
             subscriptions = list_from_subscription(sub)
             for subitem in subscriptions:
                 sites.append(subitem)
+
+        if not sites:
+            raise NoSiteFoundError('No site found in current subscriptions.')
 
         site_reprs = list(map(repr, sites))
         repr_text_maps = {t: i for i, t in enumerate(site_reprs)}

@@ -1,4 +1,3 @@
-import base64
 from typing import List
 from typing import Mapping, Type
 from urllib import parse as urlparse
@@ -6,6 +5,7 @@ from urllib import parse as urlparse
 import requests
 
 from .outbounds import ShadowsocksServer, VMessServer, NamedServer
+from .utils import base64_decode
 
 _UNKNOWN_PROTOCOLS: Mapping[str, Type[NamedServer]] = {
     'ss': ShadowsocksServer,
@@ -23,7 +23,7 @@ def parse_subscription(raw_url: str) -> NamedServer:
 
 def _get_content_from_subscription(url: str) -> List[str]:
     response = requests.get(url)
-    subscription_text = base64.b64decode(response.content).decode()
+    subscription_text = base64_decode(response.content).decode()
     return subscription_text.splitlines(keepends=False)
 
 

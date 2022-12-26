@@ -1,7 +1,7 @@
-import base64
 from urllib import parse as urlparse
 
 from .base import NamedServer
+from ..utils import base64_decode
 
 
 class ShadowsocksServer(NamedServer):
@@ -38,10 +38,7 @@ class ShadowsocksServer(NamedServer):
         splitted = urlparse.urlsplit(raw_url)
         assert splitted.scheme == 'ss'
         name = splitted.fragment
-
-        raw_netloc = splitted.netloc
-        raw_netloc = raw_netloc + '=' * (4 - len(raw_netloc) % 4)
-        netloc = base64.b64decode(raw_netloc).decode()
+        netloc = base64_decode(splitted.netloc).decode()
 
         loc_splitted = urlparse.urlsplit(f'{splitted.scheme}://{netloc}')
         method = loc_splitted.username

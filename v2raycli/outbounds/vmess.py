@@ -1,8 +1,8 @@
-import base64
 import json
 from urllib import parse as urlparse
 
 from .base import NamedServer
+from ..utils import base64_decode
 
 
 class VMessServer(NamedServer):
@@ -70,9 +70,7 @@ class VMessServer(NamedServer):
         splitted = urlparse.urlsplit(raw_url)
         assert splitted.scheme == 'vmess'
 
-        raw_netloc = splitted.netloc
-        raw_netloc = raw_netloc + '=' * (4 - len(raw_netloc) % 4)
-        raw_config = base64.b64decode(raw_netloc).decode()
+        raw_config = base64_decode(splitted.netloc).decode()
         config = json.loads(raw_config)
 
         return VMessServer(config)
