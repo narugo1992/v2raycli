@@ -1,10 +1,10 @@
 class BaseServer:
     def outbound(self, tag: str = 'proxy', ota: bool = False, level: int = 0) -> dict:
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     @classmethod
     def parse(cls, raw_url: str) -> 'BaseServer':
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
 
 # noinspection PyAbstractClass

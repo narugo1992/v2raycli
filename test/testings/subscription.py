@@ -1,0 +1,24 @@
+EXAMPLE_SUBSCRIPTION_URL = \
+    'https://jmssub.net/members/getsub.php?service=777777&id=4c646243-6c01-42f4-a4f1-eef212b2e659'
+
+EXAMPLE_SUBSCRIPTION_LINES = [
+    'ss://YWVzLTI1Ni1nY206NUQ2Z3RDOGhIM0AxNzYuMTIyLjE3NS4xOTY6MjI4OTA#JMS-267288@c21s1.jamjams3.net:22890',
+
+    'ss://YWVzLTI1Ni1nY206NUQ2Z3RDOGhIM0AxNzYuMTIyLjE3Ny4zNjoyMjg5MA#JMS-267288@c21s2.jamjams3.net:22890',
+
+    'vmess://eyJwcyI6IkpNUy0yNjcyODhAYzIxczMuamFtamFtczMubmV0OjIyODkwIiwicG9ydCI6IjIyODkwIiwiaWQiOiI1NDI4Yz'
+    'EyMy00NzM2LTQyOWYtODUzYi0zNmM3NDFhNGJhMzUiLCJhaWQiOjAsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIiwidGxzIjoibm9u'
+    'ZSIsImFkZCI6IjIxNi4yNC4xODUuMTU0In0',
+
+    'vmess://eyJwcyI6IkpNUy0yNjcyODhAYzIxczQuamFtamFtczMubmV0OjIyODkwIiwicG9ydCI6IjIyODkwIiwiaWQiOiI1NDI4Yz'
+    'EyMy00NzM2LTQyOWYtODUzYi0zNmM3NDFhNGJhMzUiLCJhaWQiOjAsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIiwidGxzIjoibm9u'
+    'ZSIsImFkZCI6IjIxMi41MC4yNDguMjMifQ',
+
+    'vmess://eyJwcyI6IkpNUy0yNjcyODhAYzIxczUuamFtamFtczMubmV0OjIyODkwIiwicG9ydCI6IjIyODkwIiwiaWQiOiI1NDI4Yz'
+    'EyMy00NzM2LTQyOWYtODUzYi0zNmM3NDFhNGJhMzUiLCJhaWQiOjAsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIiwidGxzIjoibm9u'
+    'ZSIsImFkZCI6IjEwNC4xOTMuOC4xMiJ9',
+
+    'vmess://eyJwcyI6IkpNUy0yNjcyODhAYzIxczgwMS5qYW1qYW1zMy5uZXQ6MjI4OTAiLCJwb3J0IjoiMjI4OTAiLCJpZCI6IjU0Mj'
+    'hjMTIzLTQ3MzYtNDI5Zi04NTNiLTM2Yzc0MWE0YmEzNSIsImFpZCI6MCwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJ0bHMiOiJu'
+    'b25lIiwiYWRkIjoiMTc0LjEzNy41OC4xMjgifQ'
+]

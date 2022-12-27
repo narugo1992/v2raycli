@@ -23,6 +23,7 @@ def parse_subscription(raw_url: str) -> NamedServer:
 
 def _get_content_from_subscription(url: str) -> List[str]:
     response = requests.get(url)
+    response.raise_for_status()
     subscription_text = base64_decode(response.content).decode()
     return subscription_text.splitlines(keepends=False)
 

@@ -2,7 +2,6 @@ from typing import List
 
 import click
 from InquirerPy import inquirer
-from tabulate import tabulate
 
 from .base import CONTEXT_SETTINGS, command_wrap, ClickWarningException
 from .list import _get_sublist, V2RAY_SUBSCRIPTION_ENV
@@ -13,8 +12,12 @@ from ..subscription import list_from_subscription
 V2RAY_EXEC_ENV = 'V2RAY_EXEC'
 
 
-class NoSiteFoundError(ClickWarningException):
+class NoSubscriptionFoundError(ClickWarningException):
     exit_code = 0x11
+
+
+class NoSiteFoundError(ClickWarningException):
+    exit_code = 0x12
 
 
 def _add_run_subcommand(cli: click.Group) -> click.Group:
@@ -34,10 +37,7 @@ def _add_run_subcommand(cli: click.Group) -> click.Group:
     def run(sublist: List[str], port: int, protocol: str, executable: str):
         sublist = _get_sublist(sublist)
         if not sublist:
-            sublist = [inquirer.text(message="No Subscription given, please enter one:").execute()]
-
-        click.echo(f'{len(sublist)} subscription(s) detected: ')
-        click.echo(tabulate(enumerate(sublist), headers=['#', 'Subscription Site'], tablefmt="psql"))
+            raise NoSubscriptionFoundError('No subscription found.')
 
         sites = []
         for i, sub in enumerate(sublist):

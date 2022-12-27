@@ -25,11 +25,11 @@ def _add_list_subcommand(cli: click.Group) -> click.Group:
     @command_wrap()
     def list_(sublist: List[str]):
         sublist = _get_sublist(sublist)
-        click.echo(tabulate(enumerate(sublist), headers=['#', 'Subscription Site'], tablefmt="psql"))
+        click.echo(tabulate(enumerate(sublist, start=1), headers=['#', 'Subscription Site'], tablefmt="psql"))
 
         rows = []
         headers = ['#', 'Sub', 'Name', 'Protocol', 'Address']
-        for i, sub in enumerate(sublist):
+        for i, sub in enumerate(sublist, start=1):
             subscriptions = list_from_subscription(sub)
             for subitem in subscriptions:
                 rows.append((len(rows), i, subitem.name, subitem.__protocol__, f'{subitem.address}:{subitem.port}'))
