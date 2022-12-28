@@ -32,7 +32,7 @@ def _add_list_subcommand(cli: click.Group) -> click.Group:
         for i, sub in enumerate(sublist, start=1):
             subscriptions = list_from_subscription(sub)
             for subitem in subscriptions:
-                rows.append((len(rows), i, subitem.name, subitem.__protocol__, f'{subitem.address}:{subitem.port}'))
+                rows.append((len(rows) + 1, i, subitem.name, subitem.__protocol__, f'{subitem.address}:{subitem.port}'))
         click.echo(tabulate(rows, headers=headers, tablefmt='psql'))
 
     return cli

@@ -1,4 +1,4 @@
-.PHONY: docs test unittest resource
+.PHONY: docs test unittest resource build clean
 
 PYTHON := $(shell which python)
 
@@ -9,8 +9,6 @@ DIST_DIR      := ${PROJ_DIR}/dist
 TEST_DIR      := ${PROJ_DIR}/test
 TESTFILE_DIR  := ${TEST_DIR}/testfile
 SRC_DIR       := ${PROJ_DIR}/v2raycli
-TEMPLATES_DIR := ${PROJ_DIR}/templates
-RESOURCE_DIR  := ${PROJ_DIR}/resource
 
 RANGE_DIR      ?= .
 RANGE_TEST_DIR := ${TEST_DIR}/${RANGE_DIR}
@@ -20,8 +18,11 @@ COV_TYPES ?= xml term-missing
 
 package:
 	$(PYTHON) -m build --sdist --wheel --outdir ${DIST_DIR}
+build:
+	pyinstaller -D -F -n v2raycli -c v2raycli_cli.py
 clean:
 	rm -rf ${DIST_DIR} ${BUILD_DIR} *.egg-info
+	rm -rf build dist v2raycli.spec
 
 test: unittest
 
@@ -37,6 +38,3 @@ docs:
 	$(MAKE) -C "${DOC_DIR}" build
 pdocs:
 	$(MAKE) -C "${DOC_DIR}" prod
-
-resource:
-	$(MAKE) -C "${RESOURCE_DIR}" all
