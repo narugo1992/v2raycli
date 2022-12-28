@@ -142,7 +142,6 @@ jobs:
           echo "GIT_COMMIT_ID=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_ENV
           echo "PYTHON_VERSION=$(python -V | xargs -n 1 | tail -1)" >> $GITHUB_ENV
           echo "CPU_ARCH=$(uname -m)" >> $GITHUB_ENV
-          echo "OS_NAME=$(uname)" >> $GITHUB_ENV
       - name: Get CLI name
         shell: bash
         run: |
