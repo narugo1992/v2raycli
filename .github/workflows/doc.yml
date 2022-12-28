@@ -55,9 +55,9 @@ jobs:
       - name: Deploy to Github Page
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          git-config-name: narugo1992
-          git-config-email: narugo@126.com
-          branch: gh-pages # The branch the action should deploy to.
-          folder: public # The folder the action should deploy.
-          clean: true # Automatically remove deleted files from the deploy branch
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_CONFIG_NAME: narugo1992
+          GIT_CONFIG_EMAIL: narugo@126.com
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: public # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
