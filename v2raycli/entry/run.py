@@ -8,10 +8,8 @@ from hbutils.system import get_localhost_ip
 from .base import CONTEXT_SETTINGS, command_wrap, ClickWarningException
 from .list import _get_sublist, V2RAY_SUBSCRIPTION_ENV
 from ..dispatch import put_config_to_tempfile
-from ..execute import load_v2ray_bin, get_v2ray_from_env
+from ..execute import load_v2ray_bin, get_v2ray_from_env, V2RAY_BIN_ENV
 from ..subscription import list_from_subscription
-
-V2RAY_EXEC_ENV = 'V2RAY_EXEC'
 
 
 class NoSubscriptionFoundError(ClickWarningException):
@@ -44,8 +42,8 @@ def _add_run_subcommand(cli: click.Group) -> click.Group:
                   help='Protocol to start the v2ray local service.', show_default=True)
     @click.option('--executable', '-e', 'executable',
                   type=click.Path(exists=True, file_okay=True, dir_okay=False, executable=True),
-                  default=get_v2ray_from_env(), envvar=V2RAY_EXEC_ENV, required=True,
-                  help=f'V2Ray executable file, can be assigned in env {V2RAY_EXEC_ENV!r}.', show_default=True)
+                  default=get_v2ray_from_env(), envvar=V2RAY_BIN_ENV, required=True,
+                  help=f'V2Ray executable file, can be assigned in env {V2RAY_BIN_ENV!r}.', show_default=True)
     @click.option('--random', '-R', 'use_random', is_flag=True, default=False,
                   help='Randomly choose a site to connect to without interaction.', show_default=True)
     @command_wrap()
