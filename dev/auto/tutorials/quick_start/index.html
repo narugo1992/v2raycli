@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quick Start &mdash; v2raycli 0.0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="v2raycli.config" href="../../api_doc/config/index.html" />
+    <link rel="prev" title="Installation" href="../installation/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> v2raycli
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#list-proxy-sites-in-subscription">List Proxy Sites in Subscription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-local-proxy-service">Start Local Proxy Service</a></li>
+</ul>
+</li>
+</ul>
+<p><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api_doc/config/index.html">v2raycli.config</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">v2raycli</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Quick Start</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/quick_start/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+    
+    
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p>The main feature of <code class="docutils literal notranslate"><span class="pre">v2raycli</span></code> is listed as below</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>v2raycli -h
+</pre></div></td></tr></table></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span>Usage: v2raycli [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  -v, --version  Show v2raycli&#39;s version information.
+  -h, --help     Show this message and exit.
+
+Commands:
+  list  List information of current subscription.
+  run   Start a proxy connections in subscription.
+</pre></div></td></tr></table></div>
+</div>
+<section id="list-proxy-sites-in-subscription">
+<h2>List Proxy Sites in Subscription<a class="headerlink" href="#list-proxy-sites-in-subscription" title="Permalink to this headline">¶</a></h2>
+<p>Before starting using <code class="docutils literal notranslate"><span class="pre">v2raycli</span></code>, you need a subscription url from your proxy service
+(such as <a class="reference external" href="https://justmysocks.net/members/">justmysocks</a>). Then put this url
+into <code class="docutils literal notranslate"><span class="pre">V2RAY_SUBSCRIPTION</span></code> environment (e.g. in linux)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><span class="c1"># Use your own subscription url</span>
+<span class="nb">export</span> <span class="nv">V2RAY_SUBSCRIPTION</span><span class="o">=</span><span class="s1">&#39;https://jmssub.net/members/getsub.php?service=777777&amp;id=4c646243-6c01-42f4-a4f1-eef212b2e659&#39;</span>
+</pre></div></td></tr></table></div>
+</div>
+<p>Then you can see the proxy sites in subscription you given.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>v2raycli list
+</pre></div></td></tr></table></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span>+-----+----------------------------------------------------------------------------------------------+
+|   # | Subscription Site                                                                            |
+|-----+----------------------------------------------------------------------------------------------|
+|   1 | https://jmssub.net/members/getsub.php?service=777777&amp;id=4c646243-6c01-42f4-a4f1-eef212b2e659 |
++-----+----------------------------------------------------------------------------------------------+
++-----+-------+---------------------------------------+-------------+-----------------------+
+|   # |   Sub | Name                                  | Protocol    | Address               |
+|-----+-------+---------------------------------------+-------------+-----------------------|
+|   1 |     1 | JMS-267288@c21s1.jamjams3.net:22890   | shadowsocks | 176.122.175.196:22890 |
+|   2 |     1 | JMS-267288@c21s2.jamjams3.net:22890   | shadowsocks | 176.122.177.36:22890  |
+|   3 |     1 | JMS-267288@c21s3.jamjams3.net:22890   | vmess       | 216.24.185.154:22890  |
+|   4 |     1 | JMS-267288@c21s4.jamjams3.net:22890   | vmess       | 212.50.248.23:22890   |
+|   5 |     1 | JMS-267288@c21s5.jamjams3.net:22890   | vmess       | 104.193.8.12:22890    |
+|   6 |     1 | JMS-267288@c21s801.jamjams3.net:22890 | vmess       | 174.137.58.128:22890  |
++-----+-------+---------------------------------------+-------------+-----------------------+
+</pre></div></td></tr></table></div>
+</div>
+<p>Or using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> argument</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>v2raycli list -s <span class="s1">&#39;https://jmssub.net/members/getsub.php?service=777777&amp;id=4c646243-6c01-42f4-a4f1-eef212b2e659&#39;</span>
+</pre></div></td></tr></table></div>
+</div>
+<p>Other arguments can be shown with <code class="docutils literal notranslate"><span class="pre">-h</span></code> argument.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>v2raycli list -h
+</pre></div></td></tr></table></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span>Usage: v2raycli list [OPTIONS]
+
+  List information of current subscription.
+
+Options:
+  -s, --subscription TEXT  Subscription of proxy sites, can be assigned in env
+                           &#39;V2RAY_SUBSCRIPTION&#39;.
+  -h, --help               Show this message and exit.
+</pre></div></td></tr></table></div>
+</div>
+</section>
+<section id="start-local-proxy-service">
+<h2>Start Local Proxy Service<a class="headerlink" href="#start-local-proxy-service" title="Permalink to this headline">¶</a></h2>
+<p>Before starting the proxy service locally, you need to configure the executable file of v2ray
+(you can download this from <a class="reference external" href="https://github.com/v2ray/dist/">v2ray/dist on Github</a>):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><span class="c1"># Use your own v2ray binary executable</span>
+<span class="nb">export</span> <span class="nv">V2RAY_BIN</span><span class="o">=</span>./bin/v2ray
+</pre></div></td></tr></table></div>
+</div>
+<p>After the configuration is complete, the service can be started locally</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span>v2raycli run                   <span class="c1"># Start the proxy (socks5 protocol, port 17777)</span>
+v2raycli run -P http -p <span class="m">16384</span>  <span class="c1"># Start at port 16384 with http protocol</span>
+v2raycli run -R                <span class="c1"># DO NOT ASK ME! Just randomly use one site</span>
+</pre></div></td></tr></table></div>
+</div>
+<p>The other arguments can be shown with <code class="docutils literal notranslate"><span class="pre">-h</span></code> argument.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>v2raycli run -h
+</pre></div></td></tr></table></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span>Usage: v2raycli run [OPTIONS]
+
+  Start a proxy connections in subscription.
+
+Options:
+  -s, --subscription TEXT      Subscription of proxy sites, can be assigned in
+                               env &#39;V2RAY_SUBSCRIPTION&#39;.
+  -p, --port INTEGER           Port to start the v2ray local service.
+                               [default: 17777]
+  -P, --protocol [socks|http]  Protocol to start the v2ray local service.
+                               [default: socks]
+  -e, --executable FILE        V2Ray executable file, can be assigned in env
+                               &#39;V2RAY_BIN&#39;.  [required]
+  -R, --random                 Randomly choose a site to connect to without
+                               interaction.
+  -h, --help                   Show this message and exit.
+</pre></div></td></tr></table></div>
+</div>
+</section>
+</section>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../api_doc/config/index.html" class="btn btn-neutral float-right" title="v2raycli.config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../installation/index.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, narugo1992
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: dev/auto
+    <span class="fa fa-caret-down"></span>
+  </span>
+        <div class="rst-other-versions">
+                <dl>
+                    <dt>Tags</dt>
+                        <dd><a href="../../../../v0.0.1/tutorials/quick_start/index.html">v0.0.1</a></dd>
+                        <dd><a href="../../../../v0.0.2/tutorials/quick_start/index.html">v0.0.2</a></dd>
+                </dl>
+                <dl>
+                    <dt>Branches</dt>
+                        <dd><a href="index.html">dev/auto</a></dd>
+                        <dd><a href="../../../../main/tutorials/quick_start/index.html">main</a></dd>
+                </dl>
+        </div>
+    </div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
