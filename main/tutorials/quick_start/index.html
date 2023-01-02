@@ -297,22 +297,36 @@ v2raycli<span class="w"> </span>run<span class="w"> </span>-R<span class="w">   
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span>Usage: v2raycli run [OPTIONS]
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span>Usage: v2raycli run [OPTIONS]
 
   Start a proxy connections in subscription.
 
 Options:
-  -s, --subscription TEXT      Subscription of proxy sites, can be assigned in
-                               env &#39;V2RAY_SUBSCRIPTION&#39;.
-  -p, --port INTEGER           Port to start the v2ray local service.
-                               [default: 17777]
-  -P, --protocol [socks|http]  Protocol to start the v2ray local service.
-                               [default: socks]
-  -e, --executable FILE        V2Ray executable file, can be assigned in env
-                               &#39;V2RAY_BIN&#39;.  [required]
-  -R, --random                 Randomly choose a site to connect to without
-                               interaction.
-  -h, --help                   Show this message and exit.
+  -s, --subscription TEXT         Subscription of proxy sites, can be assigned
+                                  in env &#39;V2RAY_SUBSCRIPTION&#39;.
+  -p, --port INTEGER              Port to start the v2ray local service.
+                                  [default: 17777]
+  -P, --protocol [socks|http]     Protocol to start the v2ray local service.
+                                  [default: socks]
+  -e, --executable FILE           V2Ray executable file, can be assigned in
+                                  env &#39;V2RAY_BIN&#39;.  [required]
+  -R, --random                    Randomly choose a site to connect to without
+                                  interaction.
+  -L, --loglevel [DEBUG|INFO|WARN|ERROR]
+                                  Log level for v2raycli and v2ray core.
+                                  [default: INFO]
+  --check_site TEXT               Site to connect for checking the proxy
+                                  service.  [default: https://pixiv.net]
+  --check_interval INTEGER        Interval in seconds of checking the proxy
+                                  service  [default: 300]
+  -h, --help                      Show this message and exit.
 </pre></div></td></tr></table></div>
 </div>
 </section>
@@ -368,8 +382,8 @@ Options:
                 </dl>
                 <dl>
                     <dt>Branches</dt>
-                        <dd><a href="../../../dev/auto/tutorials/quick_start/index.html">dev/auto</a></dd>
                         <dd><a href="index.html">main</a></dd>
+                        <dd><a href="../../../dev/auto/tutorials/quick_start/index.html">dev/auto</a></dd>
                 </dl>
         </div>
     </div>
