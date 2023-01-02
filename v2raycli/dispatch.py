@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import platform
 import shutil
@@ -6,9 +7,10 @@ import tempfile
 import warnings
 import weakref
 from contextlib import contextmanager
-from typing import ContextManager
+from typing import ContextManager, Union
 
 from .inbounds import get_socks_inbounds, get_http_inbounds
+from .log import get_generic_stdout_logging
 from .outbounds import BaseServer, FreedomServer
 from .routing import get_generic_routing
 
@@ -95,8 +97,10 @@ def _get_inbound(port: int, protocol: str = 'socks', **kwargs):
 
 def get_full_config(outbound: BaseServer, port: int, protocol: str,
                     no_proxy_on_private: bool = True, no_proxy_on_cn: bool = False,
-                    ota: bool = False, level: int = 0, **inbounds) -> dict:
+                    ota: bool = False, level: int = 0,
+                    log_level: Union[str, int] = logging.INFO, **inbounds) -> dict:
     return {
+        "log": get_generic_stdout_logging(log_level),
         "routing": get_generic_routing(no_proxy_on_private, no_proxy_on_cn, 'direct'),
         "inbounds": [
             _get_inbound(port, protocol, **inbounds),
@@ -111,11 +115,14 @@ def get_full_config(outbound: BaseServer, port: int, protocol: str,
 @contextmanager
 def put_config_to_tempfile(outbound: BaseServer, port: int, protocol: str = 'socks',
                            no_proxy_on_private: bool = True, no_proxy_on_cn: bool = False,
-                           ota: bool = False, level: int = 0, **inbounds) -> ContextManager[str]:
-    config = get_full_config(outbound, port, protocol, no_proxy_on_private, no_proxy_on_cn, ota, level, **inbounds)
+                           ota: bool = False, level: int = 0,
+                           log_level: Union[str, int] = logging.INFO, **inbounds) -> ContextManager[str]:
     with LocalTemporaryDirectory() as td:
         config_file = os.path.join(td, 'config.json')
         with open(config_file, 'w') as f:
-            json.dump(config, f, indent=4)
+            json.dump(get_full_config(
+                outbound, port, protocol, no_proxy_on_private, no_proxy_on_cn,
+                ota, level, log_level, **inbounds
+            ), f, indent=4)
 
         yield config_file

@@ -10,6 +10,11 @@ from v2raycli.dispatch import get_full_config, put_config_to_tempfile
 class TestDispatch:
     def test_get_full_config_socks(self, site_1, site_3):
         assert get_full_config(site_1, 17890, protocol='socks', auth=[('sampleuser', 'p@ssword')]) == {
+            'log': {
+                "loglevel": "info",
+                "access": "",
+                "error": ""
+            },
             'routing': {
                 'domainStrategy': 'IPOnDemand',
                 'rules': [
@@ -58,6 +63,11 @@ class TestDispatch:
             ]
         }
         assert get_full_config(site_3, 17890, protocol='socks', user_level=8) == {
+            'log': {
+                "loglevel": "info",
+                "access": "",
+                "error": ""
+            },
             'routing': {
                 'domainStrategy': 'IPOnDemand',
                 'rules': [
@@ -121,6 +131,11 @@ class TestDispatch:
 
     def test_get_full_config_http(self, site_3):
         assert get_full_config(site_3, 17890, protocol='http', user_level=8) == {
+            'log': {
+                "loglevel": "info",
+                "access": "",
+                "error": ""
+            },
             'routing': {
                 'domainStrategy': 'IPOnDemand',
                 'rules': [
@@ -190,6 +205,11 @@ class TestDispatch:
             assert os.path.isfile(tconfig)
             with open(tconfig, 'r') as f:
                 assert json.load(f) == {
+                    'log': {
+                        "loglevel": "info",
+                        "access": "",
+                        "error": ""
+                    },
                     'routing': {
                         'domainStrategy': 'IPOnDemand',
                         'rules': [
