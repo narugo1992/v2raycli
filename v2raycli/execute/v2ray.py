@@ -4,7 +4,8 @@ import shutil
 import subprocess
 from typing import Optional, Tuple, List
 
-from .run import subprocess_run_in_terminal
+from .check import get_proxy_check_daemon_func, DEFAULT_TARGET_SITE
+from .run import subprocess_run_in_terminal, subprocess_run_in_terminal_with_daemon
 
 V2RAY_BIN_ENV = 'V2RAY_BIN'
 
@@ -34,6 +35,18 @@ class V2RayBin:
 
     def run(self, config_file: str):
         subprocess_run_in_terminal(self._run_command(config_file))
+
+    def run_with_daemon(self, config_file: str, proxy_address: Optional[str],
+                        target_site: str = DEFAULT_TARGET_SITE, timeout: float = 5.0, max_retries: int = 3,
+                        first_interval: float = 15.0, check_interval=120.0, cycle_interval: float = 0.2):
+        if not proxy_address:
+            return self.run(config_file)
+
+        subprocess_run_in_terminal_with_daemon(
+            self._run_command(config_file),
+            get_proxy_check_daemon_func(proxy_address, target_site, timeout, max_retries),
+            check_interval, first_interval, cycle_interval,
+        )
 
     def __repr__(self):
         return f'<{type(self).__name__} {".".join(map(str, self.__version))}, exec: {self.__executable!r}>'
