@@ -4,7 +4,6 @@ from typing import List
 
 import click
 from InquirerPy import inquirer
-from hbutils.system import get_localhost_ip
 
 from .base import CONTEXT_SETTINGS, command_wrap, ClickWarningException
 from .list import _get_sublist, V2RAY_SUBSCRIPTION_ENV
@@ -32,7 +31,7 @@ def _get_address(protocol: str, port: int) -> str:
     else:
         assert False, f'Should not reach here! Protocol: {protocol!r}.'  # pragma: no cover
 
-    return f'{_protocol}://{get_localhost_ip()}:{port}'
+    return f'{_protocol}://127.0.0.1:{port}'
 
 
 def _get_sites(sublist: List[str]) -> List[NamedServer]:
